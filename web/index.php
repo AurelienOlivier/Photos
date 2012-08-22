@@ -1,19 +1,16 @@
 <?php
-use Symfony\Component\HttpFoundation\File\File;
+require_once __DIR__.'/../vendor/autoload.php';
+require_once __DIR__.'/../lib/pillow/bootstrap.php';
 
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-require_once __DIR__.'/../vendor/autoload.php';
-require_once __DIR__.'/../vendor/pillow/bootstrap.php';
-
-require_once __DIR__.'/../core/documents/PhotoDocument.php';
-require_once __DIR__.'/../core/views/PhotoView.php';
-
-use Symfony\Component\HttpFoundation\Request;
+use PhotosCore\Document\PhotoDocument;
+use PhotosCore\View\PhotoView;
 
 // Register main application
 $app = new Silex\Application();
-//$app['autoloader']->registerNamespace('PhotoCore', __DIR__.'/../core');
 $app['debug'] = true;
 
 // Register Twig
@@ -31,11 +28,9 @@ phpillowConnection::getInstance()->setDatabase("photos");
 $app->get('/', function (Silex\Application $app) {
 	$photos = PhotoView::entries();
 	
-	if (sizeof($photos->rows) > 0) {
-		return $app['twig']->render('welcome.twig', array(
-			'photos' => $photos->rows
-		));
-	}
+	return $app['twig']->render('welcome.twig', array(
+		'photos' => $photos->rows
+	));
 });
 
 // display a photo
@@ -59,9 +54,13 @@ $app->post('/create', function (Request $request) use ($app) {
 		$now = new DateTime();
 		
 		$photo = new PhotoDocument();
+		
 		$photo->title = $title;
 		$photo->filename = $uploadedFile->getClientOriginalName();
+		$photo->extension = substr($photo->filename, strrpos($photo->filename, "."));
+		
 		$photo->added = $now->getTimestamp();
+		
 		$photo->attachFile($uploadedFile, $uploadedFile->getClientOriginalName());
 		
 		$photo->save();

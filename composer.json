@@ -22,7 +22,7 @@
         "doctrine/dbal": "2.1.*",
         "swiftmailer/swiftmailer": "4.1.*"
     },
-    autoload: {
-        "psr-0": {"PhotoCore": "core/"}
+    "autoload": {
+        "psr-0": {"PhotosCore": "core/"}
     }
 }

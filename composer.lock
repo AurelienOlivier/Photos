@@ -1,5 +1,5 @@
 {
-    "hash": "5534315af9ca16d35edff0fc11788b24",
+    "hash": "c65e5f526747df6df78b793d034bfa3b",
     "packages": [
         {
             "package": "doctrine/common",
@@ -120,8 +120,8 @@
         {
             "package": "symfony/filesystem",
             "version": "dev-master",
-            "source-reference": "v2.1.0-RC1",
-            "commit-date": "1343491637"
+            "source-reference": "72acf65c2390c9066e1174d269a4e146ffad9296",
+            "commit-date": "1344875591"
         },
         {
             "package": "symfony/finder",
@@ -144,8 +144,8 @@
         {
             "package": "symfony/form",
             "version": "dev-master",
-            "source-reference": "74583bb7a8ed758c29431b4900467db04ddd0b32",
-            "commit-date": "1345322868"
+            "source-reference": "a132adde62247f5d19e191adc3a411f852667a52",
+            "commit-date": "1345650887"
         },
         {
             "package": "symfony/http-foundation",
@@ -288,8 +288,8 @@
         {
             "package": "symfony/validator",
             "version": "dev-master",
-            "source-reference": "2794f1d7bfea5c017c50f870ca1bf2dd1c363f03",
-            "commit-date": "1344856683"
+            "source-reference": "69dc85f85945f5f21379600dba924b175d50e1a8",
+            "commit-date": "1345654068"
         },
         {
             "package": "twig/twig",
