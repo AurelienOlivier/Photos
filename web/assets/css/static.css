@@ -1,0 +1,92 @@
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+.light-style {
+	background-color: #f2f2f2;
+}
+.light-style .intro {
+	color: #333;
+}
+.dark-style {
+	background-color: #000;
+}
+.dark-style .intro {
+	color:#fff;
+}
+/*******************/ 
+/* Gridster styles */
+/*******************/
+.edit-mode .gridster li {
+	cursor: move;
+}
+.gridster {
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 150px 20px;
+}
+.gridster li.intro {
+	list-style-type: none;
+	text-shadow: #333 1px 1px 5px
+}
+.gridster .title {
+	font-family: 'Pacifico', Cambria, Georgia, serif;
+	margin: 0;
+}
+.gridster .description {
+	max-height: 60px;
+    overflow: hidden;
+}
+.gridster li.thumbnail {
+	background: #fff;
+	border: 2px solid #fff;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+	box-shadow: 0 0 5px rgba(0,0,0,0.3);
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box; 
+	overflow: hidden;
+	padding: 0;
+}
+.gridster .player {
+	-webkit-box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+	box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+}
+.gridster .preview-holder {
+	border: 2px dashed #cc0000;
+	list-style-type: none;	
+}
+[data-sizex="7"][data-sizey="2"]{
+	display: table-cell;
+	height: 100%;
+	vertical-align: middle;
+}
+[data-sizex="7"][data-sizey="2"] h3 {
+	font-size: 60px;
+	line-height: normal;
+	text-align: center;
+}
+[data-sizex="1"][data-sizey="1"] img[data-orientation="portrait"],
+[data-sizex="2"][data-sizey="2"] img[data-orientation="portrait"],
+[data-sizex="2"][data-sizey="1"] img {
+	height: auto;
+	width: 100%;
+}
+[data-sizex="1"][data-sizey="1"] img[data-orientation="landscape"],
+[data-sizex="2"][data-sizey="2"] img[data-orientation="landscape"],
+[data-sizex="1"][data-sizey="2"] img {
+	height: 100%;
+	max-width: none;
+	width: auto;
+}
+/*******************/
+/* queryLoader */
+/*******************/
+.QOverlay {
+	background-color: #000;
+	z-index: 9999;
+}
+.QLoader {
+	background-color: #ccc;
+	height: 1px;
+}
