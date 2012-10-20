@@ -1,25 +1,23 @@
 {% extends "base.twig" %}
 
 {% block content %}
-<div class="page-header">
-	<h1>Welcome</h1>
-</div>
-{% if photos|length > 0 %}
-<ul class="thumbnails">
-	{% for photo in photos %}
-		<li class="span4">
-			<div class="thumbnail">
-				<a href="/photo/{{ photo.value.id }}"><img src="/photoview/{{ photo.value.id }}{{ photo.value.extension }}" alt="{{ photo.value.title }}" /></a>
-				<div class="caption">
-					<h3>{{ photo.value.title }}</h3>
-				</div>
-			</div>
-		</li>
-		{% if loop.index is divisibleby(3) and not loop.last %}
-</ul>
-<ul class="thumbnails">
-		{% endif %}
-	{% endfor %}
-</ul>
-{% endif %}
+	<div class="page-header">
+		<h1>Welcome</h1>
+	</div>
+	{% if photos|length > 0 %}
+		<ul class="thumbnails">
+			{% for photo in photos %}
+				<li class="span2" style="margin:0;">
+					<div>
+						<a href="/photo/{{ photo.value.id }}">
+							<img src="/photoview/{{ photo.value.id }}{{ photo.value.extension }}" alt="{{ photo.value.title }}" />
+						</a>
+						<div class="caption">
+							<h3>{{ photo.value.title }}</h3>
+						</div>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
 {% endblock %}

@@ -21,9 +21,9 @@ $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
 	'twig.path' => __DIR__ . '/../templates',
 ));
-$app->register(new Silex\Provider\MonologServiceProvider(), array(
-	'monolog.logfile' => __DIR__.'/../logs/development.log',
-));
+// $app->register(new Silex\Provider\MonologServiceProvider(), array(
+// 	'monolog.logfile' => __DIR__.'/../logs/development.log',
+// ));
 
 // Define security settings
 $app['security.firewalls'] = array(
