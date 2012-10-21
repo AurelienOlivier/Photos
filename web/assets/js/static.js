@@ -1,5 +1,6 @@
 $(function(){
 	// QueryLoader
+/*
 	$("body").queryLoader2({
 		barColor: "#f2f2f2",
 		backgroundColor: "#000",
@@ -7,7 +8,7 @@ $(function(){
 		barHeight: 30,
 		completeAnimation: "grow"
 	});
-
+*/
 	// Parallaxe
 	$('.bg').each(function(i, item){
 		$(item).parallax("50%", (Math.floor(Math.random() * 6) + 5) * 0.1); // set random value between 0.5 - 1
