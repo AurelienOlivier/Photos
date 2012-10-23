@@ -1,23 +1,32 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div class="page-header">
-		<h1>Welcome</h1>
-	</div>
 	{% if photos|length > 0 %}
-		<ul class="thumbnails">
-			{% for photo in photos %}
-				<li class="span2" style="margin:0;">
-					<div>
-						<a href="/photo/{{ photo.value.id }}">
-							<img src="/photoview/{{ photo.value.id }}{{ photo.value.extension }}" alt="{{ photo.value.title }}" />
-						</a>
-						<div class="caption">
-							<h3>{{ photo.value.title }}</h3>
-						</div>
-					</div>
-				</li>
-			{% endfor %}
-		</ul>
+		<div class="edit-mode light-style">
+			<div class="gridster bg clearfix">
+				<ul class="container">
+					{% set col = 1 %}
+					{% set row = 1 %}
+					{% for photo in photos %}
+						<li class="gs_w thumbnail" data-sizex="1" data-sizey="1" data-col="{{ col }}" data-row="{{ row }}">
+							<!-- <a href="/photo/{{ photo.value.id }}"> -->
+								<img src="/photoview/{{ photo.value.id }}{{ photo.value.extension }}" alt="{{ photo.value.title }}" />
+							<!-- </a> -->
+							<!-- 
+								<div class="caption">
+									<h3>{{ photo.value.title }}</h3>
+								</div>
+							-->
+						</li>
+						{% if col < 7 %}
+							{% set col = col + 1 %}
+						{% else %}
+							{% set col = 1 %}
+							{% set row = row + 1 %}
+						{% endif %}
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
 	{% endif %}
 {% endblock %}

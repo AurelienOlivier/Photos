@@ -34,8 +34,10 @@ $(function(){
 		if (w > wp) {
 			$(item).css('margin-left',-(w-wp)*.5);
 		}
+		
+		$(item).attr("data-orientation", (h > w) ? "portrait" : "landscape");
 	});
 	
 	// Colorbox
-	$('.gridster .thumbnail a').colorbox();
+	//$('.gridster .thumbnail a').colorbox();
 });
