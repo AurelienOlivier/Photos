@@ -2,7 +2,7 @@
 
 {% block content %}
 	{% if photos|length > 0 %}
-		<div class="edit-mode light-style">
+		<section class="edit-mode light-style">
 			<div class="gridster bg clearfix">
 				<ul class="container">
 					{% set col = 1 %}
@@ -27,6 +27,6 @@
 					{% endfor %}
 				</ul>
 			</div>
-		</div>
+		</section>
 	{% endif %}
 {% endblock %}
