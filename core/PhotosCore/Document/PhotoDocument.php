@@ -10,6 +10,7 @@ class PhotoDocument extends \phpillowDocument {
 		'filename',
 		'extension',
 		'added',
+		'description'
 	);
 	
 	public function __construct() {
@@ -18,6 +19,7 @@ class PhotoDocument extends \phpillowDocument {
 			'filename' => new \phpillowStringValidator(),
 			'extension' => new \phpillowStringValidator(),
 			'added' => new \phpillowDateValidator(),
+			'description' => new \phpillowStringValidator()
 		);
 		
 		parent::__construct();

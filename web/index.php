@@ -81,6 +81,7 @@ $app->get('/add', function (Silex\Application $app) {
 
 $app->post('/create', function (Request $request) use ($app) {
 	$title = $request->get("title");
+	$description = $request->get("description");
 	$uploadedFile = $request->files->get("photo");
 	
 	if ($title != null && $uploadedFile != null) {
@@ -89,6 +90,7 @@ $app->post('/create', function (Request $request) use ($app) {
 		$photo = new PhotoDocument();
 		
 		$photo->title = $title;
+		$photo->description = $description;
 		$photo->filename = $uploadedFile->getClientOriginalName();
 		$photo->extension = substr($photo->filename, strrpos($photo->filename, "."));
 		

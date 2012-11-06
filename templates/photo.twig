@@ -1,16 +1,19 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div class="page-header">
-		<h1>{{ photo.title }}</h1>
-	</div>
-	<div class="row">
-		<div class="span8">
-			<img src="/photoview/{{ photo._id }}{{ photo.extension }}" alt="{{ photo.title }}" />
+	<div class="container">
+		<div class="page-header">
+			<h1>{{ photo.title }}</h1>
 		</div>
-		<div class="span4">
-			<h3>Informations</h3>
-			<p>{{ photo.title }}</p>
+		<div class="row">
+			<div class="span8">
+				<img src="/photoview/{{ photo._id }}{{ photo.extension }}" alt="{{ photo.title }}" />
+			</div>
+			<div class="span4">
+				<h3>Informations</h3>
+				<p>{{ photo.title }}</p>
+				<p>{{ photo.description }}</p>
+			</div>
 		</div>
 	</div>
 {% endblock %}

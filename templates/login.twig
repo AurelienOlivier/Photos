@@ -1,16 +1,18 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div class="page-header">
-		<h1>Login</h1>
+	<div class="container">
+		<div class="page-header">
+			<h1>Login</h1>
+		</div>
+		<form method="post" action="{{ path('admin_login_check') }}">
+			{{ error }}
+			<label>Username</label>
+			<input type="text" name="_username" required="required" value="{{ last_username }}" placeholder="Username">
+			<label>Password</label>
+			<input type="password" name="_password" required="required" placeholder="********"><br>
+			<button type="submit" class="btn btn-primary">Submit</button>
+			<a href="{{ path('logout') }}">logout</a>
+		</form>
 	</div>
-	<form method="post" action="{{ path('admin_login_check') }}">
-		{{ error }}
-		<label>Username</label>
-		<input type="text" name="_username" required="required" value="{{ last_username }}" placeholder="Username">
-		<label>Password</label>
-		<input type="password" name="_password" required="required" placeholder="********"><br>
-		<button type="submit" class="btn btn-primary">Submit</button>
-		<a href="{{ path('logout') }}">logout</a>
-	</form>
 {% endblock %}

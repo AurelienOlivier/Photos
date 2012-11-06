@@ -1,20 +1,24 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div class="page-header">
-		<h1>Add a photo</h1>
+	<div class="container">
+		<div class="page-header">
+			<h1>Add a photo</h1>
+		</div>
+		{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+		<form method="post" action="/create" enctype="multipart/form-data">
+			<legend>Add a new photo to your gallery</legend>
+			<label>Title</label>
+			<input type="text" name="title" required="required" placeholder="Type a title ...">
+			<label>Description</label>
+			<textarea name="description" required="required" placeholder="Type a description ..."></textarea>
+			<label>Photo</label>
+			<input type="file" name="photo" required="required">
+			<span class="help-block">Choose a photo on your disk</span>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+		{% else %}
+		<p>Please <a href="{{ path("login") }}">Login</a> to upload a photo.</p>
+		{% endif %}
 	</div>
-	{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-	<form method="post" action="/create" enctype="multipart/form-data">
-		<legend>Add a new photo to your gallery</legend>
-		<label>Title</label>
-		<input type="text" name="title" required="required" placeholder="Type a title ...">
-		<label>Photo</label>
-		<input type="file" name="photo" required="required">
-		<span class="help-block">Choose a photo on your disk</span>
-		<button type="submit" class="btn btn-primary">Submit</button>
-	</form>
-	{% else %}
-	<p>Please <a href="{{ path("login") }}">Login</a> to upload a photo.</p>
-	{% endif %}
 {% endblock %}

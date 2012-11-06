@@ -2,7 +2,39 @@
 
 {% block content %}
 	{% if photos|length > 0 %}
-		<section class="edit-mode light-style">
+		{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+			<div class="container">
+				{% for photo in photos %}
+					<div class="row">
+						<div class="span1">
+							<img src="/photoview/{{ photo.value.id }}{{ photo.value.extension }}" alt="{{ photo.value.title }}" />
+						</div>
+						<div class="span2">
+							<p>{{ photo.value.title }}</p>
+						</div>
+						<div class="span9">
+							<p></p>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		{% else %}
+			<section class="edit-mode notebook-style">
+				<div class="bg clearfix">
+					<ul class="container">
+						{% for photo in photos %}
+							<li>
+								<img src="/photoview/{{ photo.value.id }}{{ photo.value.extension }}" alt="{{ photo.value.title }}" />
+								<div class="caption">
+									<p>{{ photo.value.title }}</p>
+								</div>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</section>
+		{% endif %}
+		<section class="edit-mode gallery-style">
 			<div class="gridster bg clearfix">
 				<ul class="container">
 					{% set col = 1 %}
@@ -10,13 +42,11 @@
 					{% for photo in photos %}
 						<li class="gs_w thumbnail" data-sizex="1" data-sizey="1" data-col="{{ col }}" data-row="{{ row }}">
 							<!-- <a href="/photo/{{ photo.value.id }}"> -->
-								<img src="/photoview/{{ photo.value.id }}{{ photo.value.extension }}" alt="{{ photo.value.title }}" />
+							<img src="/photoview/{{ photo.value.id }}{{ photo.value.extension }}" alt="{{ photo.value.title }}" />
 							<!-- </a> -->
-							<!-- 
-								<div class="caption">
-									<h3>{{ photo.value.title }}</h3>
-								</div>
-							-->
+							<div class="caption">
+								<p>{{ photo.value.title }}</p>
+							</div>
 						</li>
 						{% if col < 7 %}
 							{% set col = col + 1 %}
