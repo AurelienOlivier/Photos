@@ -9,6 +9,9 @@ $(function(){
 		completeAnimation: "grow"
 	});
 */
+	// Custom scroll
+	$('.scroll-pane').jScrollPane();
+	
 	// Parallaxe
 	$('.bg').each(function(i, item){
 		$(item).parallax("50%", (Math.floor(Math.random() * 6) + 5) * 0.1); // set random value between 0.5 - 1

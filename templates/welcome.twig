@@ -13,20 +13,25 @@
 							<p>{{ photo.value.title }}</p>
 						</div>
 						<div class="span9">
-							<p></p>
+							<p>{{ photo.value.description }}</p>
 						</div>
 					</div>
 				{% endfor %}
 			</div>
 		{% else %}
-			<section class="edit-mode notebook-style">
+			<section class="edit-mode notebook-style section">
 				<div class="bg clearfix">
-					<ul class="container">
+					<ul>
 						{% for photo in photos %}
 							<li>
-								<img src="/photoview/{{ photo.value.id }}{{ photo.value.extension }}" alt="{{ photo.value.title }}" />
+								<div class="image-wrapper">
+									<img src="/photoview/{{ photo.value.id }}{{ photo.value.extension }}" alt="{{ photo.value.title }}" />
+								</div>
 								<div class="caption">
-									<p>{{ photo.value.title }}</p>
+									<h4 class="title" title="{{ photo.value.title }}">{{ photo.value.title }}</h4>
+									<div class="scroll-pane">
+										<p class="description">{{ photo.value.description }}</p>
+									</div>
 								</div>
 							</li>
 						{% endfor %}
@@ -34,7 +39,7 @@
 				</div>
 			</section>
 		{% endif %}
-		<section class="edit-mode gallery-style">
+		<section class="edit-mode gallery-style section">
 			<div class="gridster bg clearfix">
 				<ul class="container">
 					{% set col = 1 %}

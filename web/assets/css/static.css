@@ -101,8 +101,11 @@ body {
 	line-height: 16px;
 }
 */
+.section {
+	
+}
 /*******************/
-/* queryLoader */
+/* queryLoader     */
 /*******************/
 .QOverlay {
 	background-color: #000;
@@ -111,4 +114,51 @@ body {
 .QLoader {
 	background-color: #ccc;
 	height: 1px;
+}
+/*******************/
+/* Notebook style  */
+/*******************/
+.notebook-style .bg {
+	background: url(../img/wood.jpg) 0 0 repeat;
+}
+.notebook-style ul {
+	margin: 0 65px 0 45px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.notebook-style ul li {
+	background-color:#fff;
+	-webkit-box-shadow: 0px 0px 8px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    0px 0px 8px rgba(50, 50, 50, 0.75);
+	box-shadow:         0px 0px 8px rgba(50, 50, 50, 0.75);
+	display: inline-block;
+	height: 300px;
+	margin: 150px 20px;
+	white-space: normal;
+}
+.notebook-style ul li .image-wrapper {
+	float: left;
+	height: 300px;
+}
+.notebook-style ul li .image-wrapper img {
+	height: 300px;
+}
+.notebook-style ul li .caption {
+	float: left;
+	height: 300px;
+	width: 200px;
+}
+.notebook-style ul li .caption .title {
+	overflow: hidden;
+	padding: 0 10px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.notebook-style ul li .caption .description {
+	padding: 0 10px;
+	font-size: 12px
+}
+.notebook-style .scroll-pane {
+	height: 230px;
+	overflow: auto;
 }
