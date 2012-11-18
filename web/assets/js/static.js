@@ -42,5 +42,5 @@ $(function(){
 	});
 	
 	// Colorbox
-	//$('.gridster .thumbnail a').colorbox();
+	$('li a.image').colorbox();
 });

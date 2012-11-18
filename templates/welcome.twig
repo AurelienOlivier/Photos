@@ -3,36 +3,39 @@
 {% block content %}
 	{% if photos|length > 0 %}
 		{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-			<div class="container">
+			<section class="container edit-mode notebook-style section">
 				{% for photo in photos %}
-					<div class="row">
-						<div class="span1">
+					<div class="row-fluid">
+						<div class="span2">
 							<img src="/photoview/{{ photo.value.id }}{{ photo.value.extension }}" alt="{{ photo.value.title }}" />
 						</div>
-						<div class="span2">
+						<div class="span10">
 							<p>{{ photo.value.title }}</p>
-						</div>
-						<div class="span9">
 							<p>{{ photo.value.description }}</p>
 						</div>
 					</div>
 				{% endfor %}
-			</div>
+			</section>
 		{% else %}
-			<section class="edit-mode notebook-style section">
+			<section class="notebook-style section">
 				<div class="bg clearfix">
 					<ul>
 						{% for photo in photos %}
 							<li>
 								<div class="image-wrapper">
-									<img src="/photoview/{{ photo.value.id }}{{ photo.value.extension }}" alt="{{ photo.value.title }}" />
+									<a href="/photoview/{{ photo.value.id }}{{ photo.value.extension }}" class="image">
+										<img src="/photoview/{{ photo.value.id }}{{ photo.value.extension }}" alt="{{ photo.value.title }}" />
+									</a>
+									<small class="badge badge-inverse photo-index">{{ loop.index }}/{{ photos|length }}</small>
 								</div>
-								<div class="caption">
-									<h4 class="title" title="{{ photo.value.title }}">{{ photo.value.title }}</h4>
-									<div class="scroll-pane">
-										<p class="description">{{ photo.value.description }}</p>
+								{% if photo.value.description != "" %}
+									<div class="caption">
+										<h4 class="title" title="{{ photo.value.title }}">{{ photo.value.title }}</h4>
+										<div class="scroll-pane">
+											<p class="description">{{ photo.value.description }}</p>
+										</div>
 									</div>
-								</div>
+								{% endif %}
 							</li>
 						{% endfor %}
 					</ul>

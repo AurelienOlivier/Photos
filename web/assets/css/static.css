@@ -1,9 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Pacifico);
-
 body {
-	padding-top: 40px;
+	font-size: 12px;
+	line-height: 1.6em;
 }
-
+header .navbar {
+	margin-bottom: 0;
+}
 .light-style {
 	background-color: #f2f2f2;
 }
@@ -120,10 +122,12 @@ body {
 /*******************/
 .notebook-style .bg {
 	background: url(../img/wood.jpg) 0 0 repeat;
+	overflow: hidden;
+	padding: 0 45px;
 }
 .notebook-style ul {
-	margin: 0 65px 0 45px;
-	overflow: hidden;
+	height: 300px;
+	margin: 150px 0;
 	white-space: nowrap;
 }
 .notebook-style ul li {
@@ -133,20 +137,27 @@ body {
 	box-shadow:         0px 0px 8px rgba(50, 50, 50, 0.75);
 	display: inline-block;
 	height: 300px;
-	margin: 150px 20px;
+	margin: 0 20px;
 	white-space: normal;
 }
 .notebook-style ul li .image-wrapper {
 	float: left;
 	height: 300px;
+	position: relative;
 }
 .notebook-style ul li .image-wrapper img {
 	height: 300px;
 }
+.notebook-style ul li .image-wrapper .photo-index {
+	left: 5px;
+	position: absolute;
+	top: 5px;
+}
 .notebook-style ul li .caption {
 	float: left;
 	height: 300px;
-	width: 200px;
+	position: relative;
+	width: 200px;	
 }
 .notebook-style ul li .caption .title {
 	overflow: hidden;
@@ -155,10 +166,18 @@ body {
 	white-space: nowrap;
 }
 .notebook-style ul li .caption .description {
+	font: 400 12px/1.6 arial, Verdana, Helvetica, sans-serif; 
 	padding: 0 10px;
-	font-size: 12px
 }
 .notebook-style .scroll-pane {
 	height: 230px;
 	overflow: auto;
+}
+/*******************/
+/* Notebook edit   */
+/*******************/
+.edit-mode.notebook-style {}
+.edit-mode.notebook-style .row-fluid {
+	border-bottom: 1px solid #bababa;
+	padding: 10px 0;
 }
