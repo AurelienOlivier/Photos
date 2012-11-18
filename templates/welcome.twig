@@ -2,46 +2,30 @@
 
 {% block content %}
 	{% if photos|length > 0 %}
-		{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-			<section class="container edit-mode notebook-style section">
-				{% for photo in photos %}
-					<div class="row-fluid">
-						<div class="span2">
-							<img src="/photoview/{{ photo.value.id }}{{ photo.value.extension }}" alt="{{ photo.value.title }}" />
-						</div>
-						<div class="span10">
-							<p>{{ photo.value.title }}</p>
-							<p>{{ photo.value.description }}</p>
-						</div>
-					</div>
-				{% endfor %}
-			</section>
-		{% else %}
-			<section class="notebook-style section">
-				<div class="bg clearfix">
-					<ul>
-						{% for photo in photos %}
-							<li>
-								<div class="image-wrapper">
-									<a href="/photoview/{{ photo.value.id }}{{ photo.value.extension }}" class="image">
-										<img src="/photoview/{{ photo.value.id }}{{ photo.value.extension }}" alt="{{ photo.value.title }}" />
-									</a>
-									<small class="badge badge-inverse photo-index">{{ loop.index }}/{{ photos|length }}</small>
-								</div>
-								{% if photo.value.description != "" %}
-									<div class="caption">
-										<h4 class="title" title="{{ photo.value.title }}">{{ photo.value.title }}</h4>
-										<div class="scroll-pane">
-											<p class="description">{{ photo.value.description }}</p>
-										</div>
+		<section class="notebook-style section">
+			<div class="bg clearfix">
+				<ul>
+					{% for photo in photos %}
+						<li>
+							<div class="image-wrapper">
+								<a href="/photoview/{{ photo.value.id }}{{ photo.value.extension }}" class="image">
+									<img src="/photoview/{{ photo.value.id }}{{ photo.value.extension }}" alt="{{ photo.value.title }}" />
+								</a>
+								<small class="badge badge-inverse photo-index">{{ loop.index }}/{{ photos|length }}</small>
+							</div>
+							{% if photo.value.description != "" %}
+								<div class="caption">
+									<h4 class="title" title="{{ photo.value.title }}">{{ photo.value.title }}</h4>
+									<div class="scroll-pane">
+										<p class="description">{{ photo.value.description }}</p>
 									</div>
-								{% endif %}
-							</li>
-						{% endfor %}
-					</ul>
-				</div>
-			</section>
-		{% endif %}
+								</div>
+							{% endif %}
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</section>
 		<section class="edit-mode gallery-style section">
 			<div class="gridster bg clearfix">
 				<ul class="container">
