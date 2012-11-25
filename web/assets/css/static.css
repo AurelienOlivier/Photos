@@ -6,18 +6,6 @@ body {
 header .navbar {
 	margin-bottom: 0;
 }
-.light-style {
-	background-color: #f2f2f2;
-}
-.light-style .intro {
-	color: #333;
-}
-.dark-style {
-	background-color: #000;
-}
-.dark-style .intro {
-	color:#fff;
-}
 /*******************/ 
 /* Gridster styles */
 /*******************/
@@ -86,26 +74,6 @@ header .navbar {
 	max-width: none;
 	width: auto;
 }
-/*
-.gridster li.thumbnail .thumbnail-inner-wrapper {
-	position: relative;
-}
-.gridster li.thumbnail .thumbnail-inner-wrapper .caption {
-	background-color: #fff;
-	bottom: 0;
-	left: 0;
-	position: absolute;
-	right: 0;
-	top: 0;
-}
-.gridster li.thumbnail .thumbnail-inner-wrapper .caption p {
-	font-size: 12px;
-	line-height: 16px;
-}
-*/
-.section {
-	
-}
 /*******************/
 /* queryLoader     */
 /*******************/
@@ -116,68 +84,4 @@ header .navbar {
 .QLoader {
 	background-color: #ccc;
 	height: 1px;
-}
-/*******************/
-/* Notebook style  */
-/*******************/
-.notebook-style .bg {
-	background: url(../img/wood.jpg) 0 0 repeat;
-	overflow: hidden;
-	padding: 0 45px;
-}
-.notebook-style ul {
-	height: 300px;
-	margin: 150px 0;
-	white-space: nowrap;
-}
-.notebook-style ul li {
-	background-color:#fff;
-	-webkit-box-shadow: 0px 0px 8px rgba(50, 50, 50, 0.75);
-	-moz-box-shadow:    0px 0px 8px rgba(50, 50, 50, 0.75);
-	box-shadow:         0px 0px 8px rgba(50, 50, 50, 0.75);
-	display: inline-block;
-	height: 300px;
-	margin: 0 20px;
-	white-space: normal;
-}
-.notebook-style ul li .image-wrapper {
-	float: left;
-	height: 300px;
-	position: relative;
-}
-.notebook-style ul li .image-wrapper img {
-	height: 300px;
-}
-.notebook-style ul li .image-wrapper .photo-index {
-	left: 5px;
-	position: absolute;
-	top: 5px;
-}
-.notebook-style ul li .caption {
-	float: left;
-	height: 300px;
-	position: relative;
-	width: 200px;	
-}
-.notebook-style ul li .caption .title {
-	overflow: hidden;
-	padding: 0 10px;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}
-.notebook-style ul li .caption .description {
-	font: 400 12px/1.6 arial, Verdana, Helvetica, sans-serif; 
-	padding: 0 10px;
-}
-.notebook-style .scroll-pane {
-	height: 230px;
-	overflow: auto;
-}
-/*******************/
-/* Notebook edit   */
-/*******************/
-.edit-mode.notebook-style {}
-.edit-mode.notebook-style .row-fluid {
-	border-bottom: 1px solid #bababa;
-	padding: 10px 0;
 }
