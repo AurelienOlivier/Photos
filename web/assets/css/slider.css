@@ -1,36 +1,36 @@
 .image img {
 	max-height: 350px!important;
 }
+section.bg {
+	background: url(../img/wood.jpg) 0 0;
+	padding: 150px 0;
+}
 .screen {
 	position: relative;
 }
-
 .screen .next,.screen .prev {
 	cursor: pointer;
 	position: absolute;
 	top: 150px;
 }
-
 .screen .prev {
 	left: 10px;
 }
-
 .screen .next {
 	right: 10px;
 }
-
+.screen .media .pull-left {
+	margin: 0;
+}
 .sections {
 	height: 350px;
 	margin: 0 60px;
 	overflow: hidden;
 }
-
 .sections ul {
-	background-color: #fff;
 	list-style: none;
 	width: 10000px; /* TEMP !! */
 }
-
 .sections li {
 	background-color: #eee;
 	float: left;
@@ -38,7 +38,6 @@
 	margin: 0 10px 0 0;
 	position: relative;
 }
-
 .sections li .toolbar-top,.sections li .toolbar-bottom {
 	background: none repeat scroll 0 0 #000;
 	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.75);
@@ -52,23 +51,18 @@
 	-o-transition-duration: 0.3s;
 	transition-duration: 0.3s;
 }
-
 .sections li .toolbar-top {
 	top: -44px;
 }
-
 .sections li .toolbar-bottom {
 	bottom: -44px;
 }
-
 .sections li:hover .toolbar-top,.sections li:hover .toolbar-bottom {
 	opacity: 1;
 }
-
 .sections li:hover .toolbar-top {
 	top: 0;
 }
-
 .sections li:hover .toolbar-bottom {
 	bottom: 0;
 }

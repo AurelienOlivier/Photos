@@ -1,0 +1,75 @@
+{% extends "admin/base.twig" %}
+
+{% block content %}
+	<section class="ui-layout-west gallery-list">
+		<div class="ui-layout-header clearfix">
+			<hgroup>
+				<h1>Gallery list</h1>
+			</hgroup>
+			<p>
+				<a href="#"><i class="icon-plus-sign icon-white"></i> Add Gallery</a>
+			</p>
+		</div>
+		<div class="ui-layout-content">
+			<ul class="nav nav-list">
+				<li>
+					<a href="#">Gallery 01 <span class="badge pull-right">19</span></a>
+				</li>
+				<li>
+					<a href="#">Gallery 02 <span class="badge pull-right">29</span></a>
+				</li>
+				<li class="active">
+					<a href="#">Vacances au bout de la terre <span class="badge pull-right">17</span></a>
+				</li>
+				<li>
+					<a href="#">Gallery 04 <span class="badge pull-right">20</span></a>
+				</li>
+				<li>
+					<a href="#">Gallery 05 very very very very very very very very lonnnnnng <span class="badge pull-right">13</span></a>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<section class="ui-layout-center">
+		<section class="ui-layout-west photo-list">
+			<div class="ui-layout-header clearfix">
+				<hgroup>
+					<h2>Photo list</h2>
+					<h1 class="ui-widget-header">Vacances au bout de la terre</h1>
+				</hgroup>
+				<p>
+					<a href="#"><i class="icon-plus-sign icon-white"></i> Add content</a>
+				</p>
+			</div>
+			<div class="ui-layout-content">
+
+					<div class="media">
+						<a href="#" class="pull-left">
+							<img src="http://placehold.it/64x64" class="media-object">
+						</a>
+						<div class="media-body">
+							<h4 class="media-heading">photo title</h4>
+							<p class="clearfix">
+								<a href="#">See</a>
+							</p>
+						</div>
+					</div>
+
+			</div>
+		</section>
+		<section class="ui-layout-center photo-detail">
+			<div class="ui-layout-header clearfix">
+				<hgroup>
+					<h2>Photo detail</h2>
+					<h1>photo title</h1>
+				</hgroup>
+				<p>
+					<a href="#"><i class="icon-pencil icon-white"></i> Edit</a>
+				</p>
+			</div>
+			<div class="ui-layout-content">
+				...
+			</div>
+		</section>
+	</section>
+{% endblock %}

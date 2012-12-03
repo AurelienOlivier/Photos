@@ -107,8 +107,10 @@ $app->post('/create', function (Request $request) use ($app) {
 })->bind("create");
 
 // user management
-$app->get("/profile", function() {
-	
+$app->get("/profile", function(Silex\Application $app) {
+	return $app['twig']->render('admin/profile.twig', array(
+			'app' => $app,
+	));
 })->bind("profile");
 
 // image handler

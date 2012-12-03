@@ -46,30 +46,5 @@
 				<a class="btn next" href="#"><i class="icon-chevron-right"></i></a>
 			</div>
 		</section>
-		
-		<section class="edit-mode gallery-style section">
-			<div class="gridster bg clearfix">
-				<ul class="container">
-					{% set col = 1 %}
-					{% set row = 1 %}
-					{% for photo in photos %}
-						<li class="gs_w thumbnail" data-sizex="1" data-sizey="1" data-col="{{ col }}" data-row="{{ row }}">
-							<!-- <a href="/photo/{{ photo.value.id }}"> -->
-							<img src="/photoview/{{ photo.value.id }}{{ photo.value.extension }}" alt="{{ photo.value.title }}" />
-							<!-- </a> -->
-							<div class="caption">
-								<p>{{ photo.value.title }}</p>
-							</div>
-						</li>
-						{% if col < 7 %}
-							{% set col = col + 1 %}
-						{% else %}
-							{% set col = 1 %}
-							{% set row = row + 1 %}
-						{% endif %}
-					{% endfor %}
-				</ul>
-			</div>
-		</section>
 	{% endif %}
 {% endblock %}
